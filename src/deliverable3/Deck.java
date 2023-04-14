@@ -7,6 +7,7 @@ package deliverable3;
 /**
  *
  * @author MayxT
+ * @modifier Diep Xuan Nhi Bui
  */
 public class Deck extends GroupOfCards{
     //Bulid a BlackJack Card deck
@@ -23,16 +24,15 @@ public class Deck extends GroupOfCards{
     //Deal cards to the dealer or the players. The number of cards dealed will be depend 
     //on the situaiton including starting the game, hit, stay.
     public void deal (int amount, GroupOfCards hand) {
-        //GroupOfCards checkRecipient = new GroupOfCards();
-        int high = cards.size() - 1;
-        int low = high - amount;
-        for (int i = high; i > low; --i) {
+        int lastIndex = cards.size() - 1;
+        int start = lastIndex - amount;
+        for (int i = lastIndex; i > start; --i) {
             hand.addCard(cards.get(i));
             cards.remove(i);
         }
     }
 
-    //This will return an int representation of the sum of all the cards in the dealer or players hands depending on which is passed in.
+    //method is used to calculate the total hand value of each player
     public int handsValue (GroupOfCards hands) {
         int total = 0;
         int[] array = new int[hands.deckSize()];
