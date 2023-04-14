@@ -26,7 +26,7 @@ public class Blackjack extends Game{
     }
     
     //the game is initialized
-    public void run () {
+    public void run() {
         play(dealer, player, deck);
     }
     
@@ -34,7 +34,7 @@ public class Blackjack extends Game{
     public void play (CurrentPlayer dealer, CurrentPlayer player, Deck deck) {
 
         Scanner input = new Scanner(System.in);
-
+        
         this.deck.deal(2, dealerHand);//deal 2 cards to dealer at the beginning of the game
         this.deck.deal(2, playerHand); //deal 2 cards to player at the beginning of the game
 
