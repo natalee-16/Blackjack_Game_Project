@@ -16,6 +16,6 @@ public class GamesCards extends Card{
     
     @Override
     public String toString(){
-        return getValue() + " of" + getSuit();
+        return getValue() + " of " + getSuit();
     }
 }

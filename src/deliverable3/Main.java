@@ -8,6 +8,7 @@ package deliverable3;
 /**
  *
  * @author MayxT
+ * @author Diep Xuan Nhi Bui
  */
 public class Main {
     public static void main (String[] args)
