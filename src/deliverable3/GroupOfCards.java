@@ -22,7 +22,7 @@ public class GroupOfCards {
     //The group of cards, stored in an ArrayList
     protected ArrayList<Card> cards;
 
-    //New ArrayList creation
+    
     public GroupOfCards() {
         cards = new ArrayList<>();
     }

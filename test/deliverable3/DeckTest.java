@@ -12,7 +12,7 @@ import org.junit.Test;
 
 /**
  *
- * @author nbui6
+ * @author Diep Xuan Nhi Bui
  */
 public class DeckTest {
 
@@ -52,12 +52,40 @@ public class DeckTest {
 
     /**
      * Test of handsValue method, of class Deck.
-     *
-     * //@Test public void testHandsValue() { System.out.println("handsValue");
-     * GroupOfCards hands = null; Deck instance = new Deck(); int expResult = 0;
-     * int result = instance.handsValue(hands); assertEquals(expResult, result);
-     * // TODO review the generated test code and remove the default call to
-     * fail. fail("The test case is a prototype.");
-    }
      */
+    @Test
+    public void testHandsValueGood() {
+        System.out.println("HandsValue Good");
+        GroupOfCards hands = new GroupOfCards();
+        hands.addCard(new GamesCards(Suit.HEARTS, Value.JACK));
+        hands.addCard(new GamesCards(Suit.DIAMONDS, Value.TEN));
+        hands.addCard(new GamesCards(Suit.CLUBS, Value.THREE));
+        Deck deck = new Deck();
+        int expectedValue = 23;
+        int actualValue = deck.handsValue(hands);
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void testHandsValueBad() {
+        System.out.println("HandsValue Bad");
+        GroupOfCards hands = new GroupOfCards();
+        Deck deck = new Deck();
+        int expectedValue = 0;
+        int actualValue = deck.handsValue(hands);
+        assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void testHandsValueBoundary() {
+        System.out.println("HandsValue Boundary");
+        GroupOfCards hands = new GroupOfCards();
+        hands.addCard(new GamesCards(Suit.HEARTS, Value.ACE));
+        hands.addCard(new GamesCards(Suit.DIAMONDS, Value.TEN));
+        Deck deck = new Deck();
+        int expectedValue = 21;
+        int actualValue = deck.handsValue(hands);
+        assertEquals(expectedValue, actualValue);
+    }
+
 }

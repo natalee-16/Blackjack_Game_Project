@@ -72,11 +72,11 @@ public class Blackjack extends Game {
 
                 //if player's hand value is 21 or greater than 21, declare the winner
                 if (deck.handsValue(player.getHand()) > 21) { //If player hand value > 21; declareWinner: dealer
-                    declareWinner(dealer);
+                    winningResult(dealer);
                     System.out.println("The player lost $" + bet);
                     break; //stop while loop
                 } else if (deck.handsValue(player.getHand()) == 21) {
-                    declareWinner(player);
+                    winningResult(player);
                     System.out.println("CONGRATS YOU WON $" + bet * 2);
                     break;
                 }
@@ -105,14 +105,14 @@ public class Blackjack extends Game {
 
                 //both dealer and player does not choose to hit anymore, compare dealer and player's hand values.
                 if (((deck.handsValue(dealer.getHand())) > 21) || (deck.handsValue(player.getHand()) > deck.handsValue(dealer.getHand()))) {
-                    declareWinner(player);
+                    winningResult(player);
                      System.out.println("CONGRATS YOU WON $" + bet * 2);
                     break;
                 } else if (deck.handsValue(player.getHand()) == deck.handsValue(dealer.getHand())) {
-                    declareWinner(null);
+                    winningResult(null);
                     break;
                 } else {
-                    declareWinner(dealer);
+                    winningResult(dealer);
                     System.out.println("The player lost $" + bet);
                     break;
                 }
@@ -121,7 +121,7 @@ public class Blackjack extends Game {
     }
 
     @Override //Declare the winner of the game
-    public void declareWinner(Player person) {
+    public void winningResult(Player person) {
         if (person == null) {
             System.out.println("Dealer and player are the same! Push!");
         } else {
