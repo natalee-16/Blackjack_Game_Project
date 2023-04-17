@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package deliverable3;
 
 import java.util.InputMismatchException;
@@ -54,15 +50,15 @@ public class Blackjack extends Game {
         System.out.println("Player hand value: " + this.deck.handsValue(playerHand));
 
         //To continue the game, player chooses to hit or stay
-        while (deck.handsValue(player.getHand()) <= 21) { //While player hand < 21
+        while (deck.handsValue(player.getHand()) <= 21) { 
 
             System.out.println("\nWould you like to 'hit' or 'stay'?");
-            String choice = (input.nextLine()); //console input here
+            String choice = (input.nextLine()); 
             //when player choose hit
             if (choice.equalsIgnoreCase("hit")) {
 
                 System.out.println("*****************************************************");
-                deck.deal(1, player.getHand()); //deal 1 card to player
+                deck.deal(1, player.getHand()); 
 
                 //display cards in hand after player chooses to hit
                 System.out.println("\nPlayer draw a card, cards in the player's hands after hit: ");
@@ -72,7 +68,7 @@ public class Blackjack extends Game {
                 System.out.println("\nPlayer hand value: " + deck.handsValue(player.getHand()));
 
                 //if player's hand value is 21 or greater than 21, declare the winner
-                if (deck.handsValue(player.getHand()) > 21) { //If player hand value > 21; declareWinner: dealer
+                if (deck.handsValue(player.getHand()) > 21) { 
                     winningResult(dealer);
                     System.out.println("The player lost $" + bet);
                     break; //stop while loop
@@ -81,14 +77,14 @@ public class Blackjack extends Game {
                     System.out.println("CONGRATS YOU WON $" + bet * 2);
                     break;
                 }
-            } //hit ends
-            //when player choose stay
-            else if (choice.equalsIgnoreCase("stay")) { //If choice not case sensitive: 'stay'
+            } 
+            
+            else if (choice.equalsIgnoreCase("stay")) { 
                 System.out.println("\nDealer's hands:");
                 dealerHand.printDeck();
                 System.out.println("Dealer hand value: " + deck.handsValue(dealer.getHand()));
                 //when dealer hand value is less than 17, dealer chooses hit automatically
-                while (deck.handsValue(dealer.getHand()) < 17) { //makes dealer draw if dealer hand value < 17
+                while (deck.handsValue(dealer.getHand()) < 17) { 
 
                     System.out.println("*****************************************************");
                     deck.deal(1, dealer.getHand());
@@ -117,11 +113,11 @@ public class Blackjack extends Game {
                     System.out.println("The player lost $" + bet);
                     break;
                 }
-            } //stay ends
-        } //while loop ends here
+            } 
+        }
     }
 
-    @Override //Declare the winner of the game
+    @Override 
     public void winningResult(Player person) {
         if (person == null) {
             System.out.println("Dealer and player are the same! Push!");

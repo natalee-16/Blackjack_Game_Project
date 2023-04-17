@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package deliverable3;
 
 import java.util.NoSuchElementException;
@@ -24,8 +20,6 @@ public class Deck extends GroupOfCards {
         shuffle();
     }
 
-    //Deal cards to the dealer or the players. The number of cards dealed will be depend 
-    //on the situaiton including starting the game, hit, stay.
     public void deal(int amount, GroupOfCards hand) {
         if (amount < 0) {
             throw new IllegalArgumentException("Amount cannot be negative");
