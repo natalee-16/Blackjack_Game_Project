@@ -42,6 +42,7 @@ public class Blackjack extends Game {
             System.out.println("Invalid input for bet amount!");
             return;
         }
+        
         input.nextLine();
         this.deck.deal(2, dealerHand);//deal 2 cards to dealer at the beginning of the game
         this.deck.deal(2, playerHand); //deal 2 cards to player at the beginning of the game

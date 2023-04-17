@@ -4,6 +4,8 @@
  */
 package deliverable3;
 
+import java.util.NoSuchElementException;
+
 /**
  *
  * @author MayxT
@@ -28,6 +30,9 @@ public class Deck extends GroupOfCards {
         if (amount < 0) {
             throw new IllegalArgumentException("Amount cannot be negative");
         }
+         if (cards.isEmpty()) {
+        throw new NoSuchElementException("Deck is empty");
+    }
         int lastIndex = cards.size() - 1;
         int start = lastIndex - amount;
         for (int i = lastIndex; i > start; --i) {
