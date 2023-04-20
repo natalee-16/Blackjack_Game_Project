@@ -17,7 +17,7 @@ public abstract class Card {
     protected Suit suit;
     protected Value value;
 
-    public Card (Suit suit, Value value) {
+    protected Card (Suit suit, Value value) {
         this.suit = suit;
         this.value = value;
     }
